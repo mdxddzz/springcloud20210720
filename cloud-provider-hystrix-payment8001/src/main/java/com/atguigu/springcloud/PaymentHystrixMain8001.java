@@ -24,7 +24,7 @@ public class PaymentHystrixMain8001 {
         SpringApplication.run(PaymentHystrixMain8001.class,args);
     }
 
-    @Bean
+    @Bean       //用于解决监控中心无法读取监控信息问题
     public ServletRegistrationBean getServlet(){
         HystrixMetricsStreamServlet hystrixMetricsStreamServlet = new HystrixMetricsStreamServlet();
         ServletRegistrationBean<HystrixMetricsStreamServlet> registrationBean = new ServletRegistrationBean<>(hystrixMetricsStreamServlet);

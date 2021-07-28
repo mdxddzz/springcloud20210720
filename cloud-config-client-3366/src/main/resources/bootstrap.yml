@@ -1,0 +1,27 @@
+server:
+  port: 3366
+spring:
+  application:
+    name: cloud-config-client
+  cloud:
+    config:   #综合下述读取 http://localhost:3344/main/config-dev.yml
+      name: config
+      label: main
+      profile: dev
+      uri: http://localhost:3344
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+#配置监控暴露
+management:     #用于在修改config配置中心配置时可以通过手动curl -X POST http://localhost:3355/actuator/refresh方式更新config中心配置
+  endpoints:
+    web:
+      exposure:
+        include: "*"

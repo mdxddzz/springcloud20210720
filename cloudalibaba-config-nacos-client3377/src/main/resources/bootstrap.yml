@@ -1,0 +1,18 @@
+server:
+  port: 3377
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: localhost:8848
+        file-extension: yaml
+        group: DEFAULT_GROUP #不写默认读取DEFAULT_GROUP默认分组
+        namespace: 37b649b3-587f-4d29-852d-939737c7c2aa
+
+#${prefix}-${spring.profiles.active}.${file-extension}
+#对应本地参数值为nacos-config-client-dev.yaml
+#https://nacos.io/zh-cn/docs/quick-start-spring-cloud.html

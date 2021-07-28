@@ -1,0 +1,15 @@
+server:
+  port: 83
+spring:
+  application:
+    name: nacos-order-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+feign:
+#  url: http://NACOS-PAYMENT-PROVIDER
+  name: nacos-payment-provider    #必须为小写！！！！！！！！！
+
+

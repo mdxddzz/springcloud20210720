@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @Configuration
 public class ApplicationContextConfig {
     @Bean
-//    @LoadBalanced   //当配置多台机子提供服务时需要提供一种默认的负载均衡方式来选择，否则无法自动选择
+    @LoadBalanced   //当配置多台机子提供服务时需要提供一种默认的负载均衡方式来选择，否则无法自动选择
     public RestTemplate getRestTemlate(){
         return new RestTemplate();
     }
