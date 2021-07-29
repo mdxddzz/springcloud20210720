@@ -13,6 +13,8 @@ spring:
         dashboard: localhost:8080   #sentinel dashboard地址
         port: 8719  #默认端口为8719，找不到则依次+1扫描
 
+
+
 management:
   endpoints:
     web:
